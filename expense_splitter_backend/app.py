@@ -9,7 +9,6 @@ db = SQLAlchemy()
 migrate = Migrate()
 jwt = JWTManager()
 expenses = []
-app = Flask(__name__)
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -38,6 +37,7 @@ def create_app(config_class=Config):
 
     return app
 
+# Routes for handling expenses and balances
 @app.route("/api/expenses/add", methods=["POST"])
 def add_expense():
     data = request.get_json()
@@ -70,5 +70,5 @@ def index():
     return render_template("index.html")
 
 if __name__ == '__main__':
-    app = create_app()
+    app = create_app() 
     app.run(debug=True)
