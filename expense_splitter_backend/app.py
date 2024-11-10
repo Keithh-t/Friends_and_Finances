@@ -22,7 +22,17 @@ def create_app(config_class=Config):
     from resources.auth import auth_bp
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
 
-    # ... register other blueprints
+    from resources.groups import groups_bp
+    app.register_blueprint(groups_bp, url_prefix='/api/groups')
+
+    from resources.expenses import expenses_bp
+    app.register_blueprint(expenses_bp, url_prefix='/api/expenses')
+
+    from resources.balances import balances_bp
+    app.register_blueprint(balances_bp, url_prefix='/api/balances')
+
+    from resources.payments import payments_bp
+    app.register_blueprint(payments_bp, url_prefix='/api/payments')
 
     return app
 
