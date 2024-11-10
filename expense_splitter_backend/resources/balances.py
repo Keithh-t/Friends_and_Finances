@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from app import db
-from models import ExpenseSplit, Expense
+from models import Expense, ExpenseSplit, GroupMember, User
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 balances_bp = Blueprint('balances_bp', __name__)
