@@ -70,5 +70,6 @@ def create_app(config_class=Config):
     return app
 
 if __name__ == '__main__':
+    # Initialize the app and run it
     app = create_app()
     app.run(debug=True)
